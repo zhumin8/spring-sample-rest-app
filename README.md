@@ -3,6 +3,7 @@ This is a sample REST app created to get a taste of the basics of Spring Boot.
 This code is build from Spring initializr code.
 The starter code can be downloaded via:
 `curl https://start.spring.io/starter.tgz -d dependencies=web,jpa,derby -d baseDir=testtest -d bootVersion=2.4.8.BUILD-SNAPSHOT  | tar -xzvf -`
+
 ---
 This app supports:
 - GET: 
