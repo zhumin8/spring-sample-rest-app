@@ -2,9 +2,7 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +31,22 @@ public class WebController {
     // this annotation matches the variable by name (default). Specify variable name by
     // @PathVariable("foo")
     return topicService.getTopic(id);
+  }
+
+  @PostMapping("/add")
+  public void addTopic(@RequestBody Topic topic) {
+    // this annotation takes the request body to create the topic obj. json is default type taken.
+    topicService.addTopic(topic);
+  }
+
+  @PutMapping("/topics/{id}")
+  public void updateTopic(@PathVariable String id, @RequestBody Topic topic) {
+    topicService.updateTopic(id, topic);
+  }
+
+  @DeleteMapping("/topics/{id}")
+  public void deleteTopic(@PathVariable String id) {
+    topicService.deleteTopic(id);
   }
 
   @Bean
