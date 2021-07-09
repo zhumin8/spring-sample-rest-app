@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SomeConfig {
     @Bean
-    public SomeClass someClassObjectFromConfig() {
-        return new SomeClass("object1 from @Configuration");
+    public Topic someClassObjectFromConfig() {
+        return new Topic("1", "object1", "from @Configuration");
     }
     @Bean
-    public SomeClass someClassObjectFromConfig2() {
-        return new SomeClass("object2 from @Configuration");
+    public Topic someClassObjectFromConfig2() {
+        return new Topic("2", "object2", " from @Configuration");
     }
 }
