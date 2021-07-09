@@ -1,8 +1,12 @@
 package com.example.demo;
-// this is just a  sample class to get the application up
-// TODO: replace this with topic class.
-public class Topic {
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+// this is just a  sample class to get the application up
+@Entity // JPA annotation
+public class Topic {
+  @Id
   private String id;
   private String name;
   private String description;
@@ -31,7 +35,12 @@ public class Topic {
     this.description = description;
   }
 
+  // this is needed, otherwise will fail on "No default constructor for entity"
+  public Topic(){
+  }
+
   public Topic(String id, String name, String description) {
+    super();
     this.id = id;
     this.name = name;
     this.description = description;
